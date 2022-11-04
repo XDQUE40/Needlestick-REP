@@ -57,7 +57,12 @@ class WarningState extends MusicBeatState {
         selectionText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		selectionText.screenCenter(X);
 		add(selectionText);
-        super.create();
+        
+	    #if android
+	    addVirtualPad(NONE, A_B);
+	    #end
+		    
+	    super.create();
     }
 
 	override function update(elapsed:Float) {
